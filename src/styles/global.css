@@ -1,0 +1,588 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f1ece0 
+
+
+}
+   
+    
+
+
+
+
+h1 {
+    text-align: center;
+}
+.gallery-h2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: linear-gradient(to right, #474c3a, #7b7e67); /* Gradiente para el texto */
+    -webkit-background-clip: text;  /* Recortar el fondo al texto */
+    /* Estándar */
+    background-clip: text;
+    color: transparent;  /* Hacer el texto transparente para que se vea el gradiente */
+    position: relative; /* Para colocar el pseudo-elemento de manera precisa */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+}
+
+.gallery-h2::after {
+    content: ''; /* Necesario para crear el pseudo-elemento */
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    
+    height: 3px; /* Grosor de la línea */
+    background: #bcb78a; /* Color de la línea */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombras para un efecto más suave */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed; /* Fijo en la parte superior */
+    top: 0; /* Siempre visible al principio */
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 0px;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    backdrop-filter: blur(2px); /* Efecto difuminado */
+    z-index: 1000;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    transition: top 0.3s ease-in-out; /* Transición suave para moverlo */
+}
+
+/* Logo */
+.navbar-logo .logo {
+    width: 250px;
+    height: auto;
+   
+}
+
+/* Nav Container */
+nav {
+    margin-right: 15px;
+}
+
+/* Links */
+.navbar-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Hover Effect on Links */
+.navbar-links li a:hover {
+    color: #4c9556; /* Color verde*/
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 75vh;
+    background: url('/background.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Efecto de olas coherentes */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -41px; /* Ajuste de la posición */
+    left: 0;
+    width: 100%;
+    height: 120px; /* Altura de las olas */
+    background: #f1ece0 ;
+    clip-path: path("M0,60 Q150,20 300,60 Q450,100 600,60 T900,60 Q1050,20 1200,60 Q1350,100 1500,60 T1800,60 Q1950,20 2100,60 Q2250,100 2400,60 L2400,120 L0,120 Z");
+    border: none; /* Eliminar bordes */
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Destaca el texto sobre la imagen */
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 17px;
+    margin-top: 80px; /* Ajusta el espacio debajo del navbar */
+    background: #f1ece0 ;
+    margin-bottom: 25px;
+    
+    
+    
+
+
+}
+
+.gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+.modal .close, .modal .prev, .modal .next {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal .close {
+    top: 20px;
+    right: 30px;
+}
+
+.modal .prev {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.modal .next {
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+footer{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    
+  
+}
+h4{
+    color: white;
+    
+}
+h5{
+    color:white;
+}
+/* Menú hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+
+}
+
+
+/* Sección de Servicios con fondo ondulado */
+.servicios {
+    position: relative;
+    background: #222;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.servicios::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: #bcb78a;
+    clip-path: path("M0,100 Q400,10 800,80 T1600,40 Q1920,100 1920,0 L0,0 Z");
+}
+
+
+.servicios h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.servicios-h2{
+    position: relative; /* Para colocar el pseudo-elemento de manera precisa */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+
+}
+.servicios-h2::after{
+    content: ''; /* Necesario para crear el pseudo-elemento */
+    position: absolute;
+    bottom: 0;
+    left: 32%;
+    width: 35%;
+    
+    height: 3px; /* Grosor de la línea */
+    background: #bcb78a; /* Color de la línea */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombras para un efecto más suave */
+}
+
+
+.servicios h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: "Plus Jakarta Sans", serif;
+    font-optical-sizing: auto;
+}
+
+.servicios i {
+    font-size: 24px;
+    color: #007bff;
+}
+
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color:white;
+    color: #222;
+    font-style: bold;
+    text-align: center;
+    position: relative;
+    
+}
+
+.contacto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color:#222;
+    clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    padding: 20px;
+    border-radius: 4%;
+    background: #bcb78a;
+    font-family: "Plus Jakarta Sans", serif; ;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1.5px solid #525448;
+    border-radius: 4px;
+    font-family: "Plus Jakarta Sans", serif; ;
+}
+button {
+    background:  #363b2a ;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background:#474c3a ;
+}
+
+h4{
+    color: #333;
+    font-size: 30px;
+    font-family: "Libre Baskerville", serif;
+}
+
+.contacto form {
+    border: 2px solid #a9a57d; /* Un tono más oscuro del formulario */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+input:focus {
+    border: 2px solid #a19c75; /* Un tono más oscuro de #bcb78a */
+    outline: none;
+    box-shadow: 0 0 6px rgba(161, 156, 117, 0.6); /* Sutil efecto de brillo */
+}
+textarea:focus{
+    border: 2px solid #a19c75; /* Un tono más oscuro de #bcb78a */
+    outline: none;
+    box-shadow: 0 0 6px rgba(161, 156, 117, 0.6); /* Sutil efecto de brillo */
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .prev{
+        display: none;
+    }
+    .next{
+        display: none;
+    }
+        
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        right: 0;
+        background-color: #111;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+       
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+        padding: 5px;
+       
+        
+    }
+
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active {
+        transform: rotate(180deg); /* Animación menu */
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        padding: 10px;
+        cursor: grab;
+    }
+
+    .gallery img {
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+
+/*###############################ubicacion#####################*/
+.ubicacion{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.ubicacion-h2{
+    font-size: 35px;
+    font-family:"Libre Baskerville", serif; ;
+    color: #333;
+}
+.ubicacion-h3{
+    text-align: center;
+    color: #333;
+}
+.ubicacion-section{
+
+    padding: 4%;
+    line-height: 1.2;
+    margin: 2%;
+}
+.reservas{
+    font-size: 35px;
+    font-family:"Libre Baskerville", serif; ;
+    color: #333;
+    padding: 25px;
+    text-align: center;
+}
+
+/* ################# Reservas ##################### */
+.cabaña-roja, .cabaña-verde {
+    position: relative;
+    padding: 20px;
+    border: none;
+    
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+   
+}
+
+/* Fondo con imagen y efecto oscurecido */
+.cabaña-roja::before, .cabaña-verde::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+   
+    
+    filter: blur(1px) brightness(0.7); /* Desenfoque y oscurecimiento */
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.cabaña-roja::before {
+    background-image: url('../cabana-verde.webp');
+}
+
+.cabaña-verde::before {
+    background-image: url('../cabana-roja.webp');
+}
+
+/* Contenedor interno para mejorar la legibilidad */
+.cabaña-roja h3, .cabaña-verde h3 {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+
+.h3-rojo{
+    color: #df2729 ;
+    font-size: 1.7rem;
+    font-family: "Plus Jakarta Sans", serif;
+}
+.h3-verde{
+    color:  #4c9556;
+    font-size: 1.7rem;
+    font-family: "Plus Jakarta Sans", serif;
+}
+
+@media screen and (max-width: 768px) {
+    .contacto {
+        
+        padding: 25px 10px;  /* Ajuste de padding en pantallas pequeñas */
+        background-color: white;
+        background-color: #bcb78a;
+    }
+    
+    iframe{
+        display: flex;
+        width: 300px;
+    }
+    h4{
+        padding-top: 20px;
+        padding-bottom: 15px;
+       
+    }
+    form {
+        width: 100%;
+        max-width: 90%;  /* Formulario más pequeño */
+        padding: 0px;
+        background: none;
+       
+        
+        margin: 0px;
+    }
+    
+    button{
+        margin-top: 5%;
+        height: 40px;
+    }
+ 
+    .contacto form {
+        border: none;
+        box-shadow: none /* Sombra sutil */
+    }
+    input, textarea, button {
+        font-size: 13px;  /* Reducir aún más el tamaño de fuente */
+        padding: 6px;  /* Reducir padding */
+        
+    }
+    input{
+        height: 25px;
+    }
+    textarea{
+        height: 85px;
+    }
+    label{
+        color: #111;
+    }
+    .cabaña-roja::before, .cabaña-verde::before {
+        background-size: contain; /* Ajusta la imagen para que se vea completa sin cortar */
+        background-position: center center; /* Asegura que la imagen se mantenga centrada */
+    }
+
+
+}
+    

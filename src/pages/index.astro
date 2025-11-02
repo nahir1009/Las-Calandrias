@@ -1,11 +1,62 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<Layout title="Inicio">
+  <h2 class="gallery-h2">Bienvenido a nuestras Cabañas</h2>
+  <div class="gallery">
+    <img src="/entrada.jpeg" onclick="openModal(0)">
+    <img src="/vitascompleta.jpeg" onclick="openModal(1)">
+    <img src="/cocina.jpeg" onclick="openModal(2)">
+    <img src="/cama.jpeg" onclick="openModal(3)">
+    <img src="/asador.jpeg" onclick="openModal(4)">
+    <img src="/doscabañas.jpeg" onclick="openModal(5)">
+    <img src="/pscina noche.jpeg" onclick="openModal(6)">
+    <img src="/cocina2.jpeg" onclick="openModal(7)">
+    <img src="/juegos2.jpeg" onclick="openModal(8)">
+    <img src="/cochera.jpeg" onclick="openModal(9)">
+    <img src="/puerta.jpeg" onclick="openModal(10)">
+    <img src="/amaca.jpeg" onclick="openModal(11)">
+  </div>
+
+  <div class="modal" id="imageModal">
+    <span class="close" onclick="closeModal()">×</span>
+    <span class="prev" onclick="changeImage(-1)">❮</span>
+    <img id="modalImg">
+    <span class="next" onclick="changeImage(1)">❯</span>
+  </div>
+
+  <div class="servicios">
+    <h2 class="servicios-h2"> Nuestros servicios</h2>
+    <h3>Wifi <i class="fi fi-rs-wifi"></i></h3>
+    <h3>tv <i class="fi fi-rr-tv-music"></i></h3>
+    <h3>cama doble <i class="fi fi-tr-bed-alt"></i></h3>
+    <h3>sillon cama <i class="fi fi-rr-loveseat"></i></h3>
+    <h3>microondas <i class="fi fi-rs-tv-retro"></i></h3>
+    <h3>heladera <i class="fi fi-tr-refrigerator"></i></h3>
+    <h3>cocina equipada <i class="fi fi-rs-oven"></i></h3>
+    <h3>calefaccion <i class="fi fi-br-heat"></i></h3>
+    <h3>Aire acondicionado <i class="fi fi-rr-air-conditioner"></i></h3>
+    <h3>cochera <i class="fi fi-tr-garage-car"></i></h3>
+  </div>
+
+  <div class="contacto">
+    <h4>Contactanos</h4>
+    <form action="#" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+  
+  </Layout>

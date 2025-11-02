@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/Layout.astro';
+---
+
+<BaseLayout title="Reservas">
+  <div >
+    <h2 class="reservas">Reserva aqui! </h2>
+
+    <div class="cabaña-roja">
+      <h3 class="h3-rojo">Cabaña Roja</h3>
+      <div id="zhcal-root" data-id="1436f045f0d93811062007a085661e4f" data-lang="es"></div>
+    </div>
+
+    <div class="cabaña-verde">
+      <h3 class="h3-verde">Cabaña Verde</h3>
+      <div id="zhcal-root" data-id="9de345f3f95391bda3e993b96ede9a9c" data-lang="es"></div>
+    </div>
+  </div>
+
+  <script async src="https://app.calendarapp.de/loadcal.php"></script>
+</BaseLayout>
