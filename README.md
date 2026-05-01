@@ -1,7 +1,7 @@
 # Las Calandrias
 
 ## Descripción
-Sitio web desarrollado para cliente real de cabañas.
+Sitio web sobre Alquiler de Cabañas  desarrollado para cliente real .
 
 ## Tecnologías
 Astro, HTML, CSS, JavaScript
@@ -12,4 +12,4 @@ Astro, HTML, CSS, JavaScript
 - Mapa integrado
 
 ## Deploy
-(link : https://lascalandrias.netlify.app/)
+[Link:](https://lascalandrias.netlify.app/)
